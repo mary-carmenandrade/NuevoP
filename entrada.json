@@ -1,0 +1,122 @@
+[
+    {
+        "nombre": "Ceviche de Camarón",
+        "descripcion": "Ceviche fresco de camarón con limón, cilantro y cebolla roja.",
+        "precio": 16.99,
+        "tipo": "Entrada",
+        "imagen": "https://assets.unileversolutions.com/recipes-v2/235860.jpg",
+        "puntuacion": 4.6,
+        "comentarios": [
+            "Sabor excepcional",
+            "Camarones frescos"
+        ]
+    },
+    {
+        "nombre": "Empanadas de Queso",
+        "descripcion": "Empanadas horneadas rellenas de queso derretido y especias.",
+        "precio": 10.99,
+        "tipo": "Entrada",
+        "imagen": "https://www.ilolay.com.ar/uploads/recetas/1658846564-Empanadas-de-cebolla-cholco-y-queso.jpg",
+        "puntuacion": 4.4,
+        "comentarios": [
+            "Queso cremoso",
+            "Masa crujiente"
+        ]
+    },
+    {
+        "nombre": "Papa a la Huancaina",
+        "descripcion": "Papas cocidas en rodajas bañadas con una salsa de ají amarillo y queso fresco.",
+        "precio": 12.99,
+        "tipo": "Entrada",
+        "imagen": "https://assets.unileversolutions.com/recipes-v2/213259.png",
+        "puntuacion": 4.7,
+        "comentarios": [
+            "Salsa perfectamente condimentada",
+            "Papas tiernas"
+        ]
+    },
+    {
+        "nombre": "Tamal de Pollo",
+        "descripcion": "Tamal peruano relleno de pollo y verduras envuelto en hojas de plátano.",
+        "precio": 14.99,
+        "tipo": "Entrada",
+        "imagen": "https://chifaperuanomadrid.com/wp-content/uploads/2020/07/tamal-de-pollo-jama-fusion.jpg",
+        "puntuacion": 4.5,
+        "comentarios": [
+            "Sabor tradicional",
+            "Relleno jugoso"
+        ]
+    },
+    {
+        "nombre": "Causa Rellena de Atún",
+        "descripcion": "Causa limeña rellena de atún, palta y mayonesa de ají amarillo.",
+        "precio": 11.99,
+        "tipo": "Entrada",
+        "imagen": "https://1.bp.blogspot.com/-Sy38BZy3wFA/V7OUvOnk3mI/AAAAAAAAIEw/9x7LTM1GHigx6Ck-jQVI5I1WHTDKUZ7xwCLcB/s600/causa-de-atun.jpg",
+        "puntuacion": 4.8,
+        "comentarios": [
+            "Combinación de sabores",
+            "Presentación elegante"
+        ]
+    },
+    {
+        "nombre": "Anticuchos de Corazón",
+        "descripcion": "Brochetas de corazón de res adobado y asado al carbón.",
+        "precio": 13.99,
+        "tipo": "Entrada",
+        "imagen": "https://peru.info/archivos/publicacion/142-imagen-18927482020.jpg",
+        "puntuacion": 4.9,
+        "comentarios": [
+            "Textura suave",
+            "Sabor único"
+        ]
+    },
+    {
+        "nombre": "Yuquitas Fritas",
+        "descripcion": "Palitos de yuca fritos y crujientes servidos con salsa de ají amarillo.",
+        "precio": 9.99,
+        "tipo": "Entrada",
+        "imagen": "https://cocina-casera.com/wp-content/uploads/2018/04/yuquitas-3.jpg",
+        "puntuacion": 4.6,
+        "comentarios": [
+            "Sabor auténtico",
+            "Acompañante ideal"
+        ]
+    },
+    {
+        "nombre": "Chicharrón de Calamar",
+        "descripcion": "Calamares marinados y fritos acompañados de salsa criolla.",
+        "precio": 15.99,
+        "tipo": "Entrada",
+        "imagen": "https://imgmedia.buenazo.pe/1200x660/buenazo/original/2023/04/13/64386bd5fe150d1ab3782eda.png",
+        "puntuacion": 4.7,
+        "comentarios": [
+            "Crujiente por fuera, tierno por dentro",
+            "Sabor a mar"
+        ]
+    },
+    {
+        "nombre": "Ocopa Arequipeña",
+        "descripcion": "Papas cocidas cubiertas con una crema de ají amarillo y maní.",
+        "precio": 12.99,
+        "tipo": "Entrada",
+        "imagen": "https://sommelier.com.pe/wp-content/uploads/190627562_483646142749389_5454562140179241985_n.jpg",
+        "puntuacion": 4.4,
+        "comentarios": [
+            "Sabor intenso",
+            "Cremosidad perfecta"
+        ]
+    },
+    {
+        "nombre": "Tiradito de Pulpo",
+        "descripcion": "Finas láminas de pulpo marinado en limón y ají, servido con salsas.",
+        "precio": 16.99,
+        "tipo": "Entrada",
+        "imagen": "https://2.bp.blogspot.com/-_br90xSzHE4/Uo60tq-Vb6I/AAAAAAAAAQs/mKBW-yUz5W4/w1200-h630-p-k-no-nu/tiradito-de-lenguado-y-pulpo+(1).jpg",
+        "puntuacion": 4.5,
+        "comentarios": [
+            "Textura suave",
+            "Sabor fresco"
+        ]
+    }
+]

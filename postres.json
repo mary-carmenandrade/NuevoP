@@ -1,0 +1,122 @@
+[
+    {
+        "nombre": "Tres Leches",
+        "descripcion": "Pastel de tres leches con decoración de frutas.",
+        "precio": 12.99,
+        "tipo": "Postre",
+        "imagen": "https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/RCBWLDBCWVDEJH44HZGHC3KUAQ.jpg",
+        "puntuacion": 4.8,
+        "comentarios": [
+            "Dulce y esponjoso",
+            "Sabor único"
+        ]
+    },
+    {
+        "nombre": "Churros con Chocolate",
+        "descripcion": "Churros crujientes con salsa de chocolate.",
+        "precio": 8.99,
+        "tipo": "Postre",
+        "imagen": "https://mandolina.co/wp-content/uploads/2023/06/churros.png",
+        "puntuacion": 4.6,
+        "comentarios": [
+            "Irresistible",
+            "Perfecto para compartir"
+        ]
+    },
+    {
+        "nombre": "Cheesecake de Fresa",
+        "descripcion": "Cheesecake con base de galleta y salsa de fresa.",
+        "precio": 15.99,
+        "tipo": "Postre",
+        "imagen": "https://www.splenda.com/wp-content/themes/bistrotheme/assets/recipe-images/strawberry-topped-cheesecake.jpg",
+        "puntuacion": 4.9,
+        "comentarios": [
+            "Deliciosamente cremoso",
+            "Fresa fresca"
+        ]
+    },
+    {
+        "nombre": "Pastel de Chocolate",
+        "descripcion": "Pastel de chocolate negro y blanco con relleno de crema.",
+        "precio": 14.99,
+        "tipo": "Postre",
+        "imagen": "https://images.aws.nestle.recipes/original/2020_06_09T08_18_01_mrs_ImageRecipes_1810lrg.jpg",
+        "puntuacion": 4.7,
+        "comentarios": [
+            "Chocolate intenso",
+            "Textura suave"
+        ]
+    },
+    {
+        "nombre": "Mousse de Maracuyá",
+        "descripcion": "Mousse de maracuyá con base de galleta y decoración de frutas.",
+        "precio": 11.99,
+        "tipo": "Postre",
+        "imagen": "https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1001392.jpg",
+        "puntuacion": 4.6,
+        "comentarios": [
+            "Fresco y delicioso",
+            "Sabor tropical"
+        ]
+    },
+    {
+        "nombre": "Tiramisú",
+        "descripcion": "Tiramisú con capas de bizcocho, café y mascarpone.",
+        "precio": 16.99,
+        "tipo": "Postre",
+        "imagen": "https://www.eltiempo.com/files/article_main_1200/uploads/2023/03/24/641e38beecfdb.jpeg",
+        "puntuacion": 4.8,
+        "comentarios": [
+            "Equilibrio perfecto",
+            "Café suave"
+        ]
+    },
+    {
+        "nombre": "Flan de Vainilla",
+        "descripcion": "Flan suave de vainilla con caramelo líquido.",
+        "precio": 9.99,
+        "tipo": "Postre",
+        "imagen": "https://images.aws.nestle.recipes/original/f07639d0bdf09dac4f27aa9562bf15a9_FLAN_DE_VAINILLA.jpg",
+        "puntuacion": 4.5,
+        "comentarios": [
+            "Textura delicada",
+            "Sabor clásico"
+        ]
+    },
+    {
+        "nombre": "Helado de Frutas Tropicales",
+        "descripcion": "Selección de helado de frutas tropicales servido con frutas frescas.",
+        "precio": 13.99,
+        "tipo": "Postre",
+        "imagen": "https://www.laylita.com/recetas/wp-content/uploads/Helados-de-frutas-tropicales.jpg",
+        "puntuacion": 4.9,
+        "comentarios": [
+            "Refrescante",
+            "Frutas naturales"
+        ]
+    },
+    {
+        "nombre": "Cake Pops",
+        "descripcion": "Bolitas de bizcocho cubiertas de chocolate decoradas con sprinkles.",
+        "precio": 7.99,
+        "tipo": "Postre",
+        "imagen": "https://sugarspunrun.com/wp-content/uploads/2023/03/Chocolate-Cake-Pops-1-of-1.jpg",
+        "puntuacion": 4.4,
+        "comentarios": [
+            "Divertidos y deliciosos",
+            "Para todos los gustos"
+        ]
+    },
+    {
+        "nombre": "Crema Catalana",
+        "descripcion": "Crema catalana con base de yema y caramelo quemado.",
+        "precio": 12.99,
+        "tipo": "Postre",
+        "imagen": "https://spanishsabores.com/wp-content/uploads/2023/08/Crema-Catalana-Featured.jpg",
+        "puntuacion": 4.7,
+        "comentarios": [
+            "Cremosa y aromática",
+            "Sabor a cítricos"
+        ]
+    }
+]

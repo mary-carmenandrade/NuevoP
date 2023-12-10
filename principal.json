@@ -1,0 +1,122 @@
+[
+    {
+        "nombre": "Lomo Saltado",
+        "descripcion": "Salteado de lomo de res con papas y verduras, acompañado de arroz.",
+        "precio": 20.99,
+        "tipo": "Plato Principal",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Lomo-saltado-perudelights.jpg/800px-Lomo-saltado-perudelights.jpg",
+        "puntuacion": 4.8,
+        "comentarios": [
+            "Increíble",
+            "Sabor auténtico"
+        ]
+    },
+    {
+        "nombre": "Pollo a la Brasa",
+        "descripcion": "Pollo asado al carbón con papas fritas y salsa de ají amarillo.",
+        "precio": 18.99,
+        "tipo": "Plato Principal",
+        "imagen": "https://larepublica.cronosmedia.glr.pe/original/2022/07/14/62d0808ff02c09157475a263.jpg",
+        "puntuacion": 4.6,
+        "comentarios": [
+            "Delicioso",
+            "Textura perfecta"
+        ]
+    },
+    {
+        "nombre": "Seco de Cordero",
+        "descripcion": "Estofado de cordero en salsa de cerveza y hierbas, acompañado de frejoles y arroz.",
+        "precio": 24.99,
+        "tipo": "Plato Principal",
+        "imagen": "https://www.joseantonio.com.pe/wp-content/uploads/2019/07/seco-de-cordero-1.jpg",
+        "puntuacion": 4.7,
+        "comentarios": [
+            "Sabor intenso",
+            "Cocción perfecta"
+        ]
+    },
+    {
+        "nombre": "Aji de Gallina",
+        "descripcion": "Guiso de pollo desmenuzado en salsa cremosa de ají amarillo y nueces, servido con arroz y papas.",
+        "precio": 16.99,
+        "tipo": "Plato Principal",
+        "imagen": "https://cocinalocal.cl/wp-content/uploads/2022/11/Aji-de-Gallina-Peruano.jpeg",
+        "puntuacion": 4.5,
+        "comentarios": [
+            "Sabor único",
+            "Textura suave"
+        ]
+    },
+    {
+        "nombre": "Arroz con Mariscos",
+        "descripcion": "Arroz preparado con mariscos frescos, cilantro y ají amarillo.",
+        "precio": 22.99,
+        "tipo": "Plato Principal",
+        "imagen": "https://meri.pe/wp-content/uploads/2023/02/arroz-con-mariscos.jpeg",
+        "puntuacion": 4.9,
+        "comentarios": [
+            "Sabor marino",
+            "Ingredientes frescos"
+        ]
+    },
+    {
+        "nombre": "Cau Cau",
+        "descripcion": "Guiso de mondongo (callos) con papas, ají amarillo y especias.",
+        "precio": 17.99,
+        "tipo": "Plato Principal",
+        "imagen": "https://movistarplus.pe/wp-content/uploads/sites/3/2021/03/Nota-web-6.jpg",
+        "puntuacion": 4.4,
+        "comentarios": [
+            "Sabor tradicional",
+            "Textura perfecta"
+        ]
+    },
+    {
+        "nombre": "Tallarines Verdes",
+        "descripcion": "Tallarines con salsa verde de espinacas, queso fresco y carne de pollo.",
+        "precio": 15.99,
+        "tipo": "Plato Principal",
+        "imagen": "https://i.ytimg.com/vi/enxbUqDbq2g/sddefault.jpg",
+        "puntuacion": 4.6,
+        "comentarios": [
+            "Sabor casero",
+            "Salsa cremosa"
+        ]
+    },
+    {
+        "nombre": "Rocoto Relleno",
+        "descripcion": "Rocoto (pimiento picante) relleno de carne molida y queso gratinado.",
+        "precio": 19.99,
+        "tipo": "Plato Principal",
+        "imagen": "https://mirecetadehoy.com/wp-content/uploads/2022/11/rocoto-relleno_700x466.jpg",
+        "puntuacion": 4.7,
+        "comentarios": [
+            "Picante y delicioso",
+            "Queso derretido"
+        ]
+    },
+    {
+        "nombre": "Picante de Mariscos",
+        "descripcion": "Guiso de mariscos frescos con ají panca, cilantro y papas amarillas.",
+        "precio": 21.99,
+        "tipo": "Plato Principal",
+        "imagen": "https://comidasperuanas.net/wp-content/uploads/2020/11/Picante-de-Mariscos-peruano.jpg",
+        "puntuacion": 4.8,
+        "comentarios": [
+            "Sabor a mar",
+            "Especias perfectas"
+        ]
+    },
+    {
+        "nombre": "Chaufa de Pollo",
+        "descripcion": "Arroz frito estilo chino con pollo, cebolla, pimientos y salsa de soja.",
+        "precio": 14.99,
+        "tipo": "Plato Principal",
+        "imagen": "https://origin.cronosmedia.glr.pe/large/2020/12/18/lg_5fdd5b4acf89f80dcc653f1d.jpg",
+        "puntuacion": 4.5,
+        "comentarios": [
+            "Sabor oriental",
+            "Fusión deliciosa"
+        ]
+    }
+]
