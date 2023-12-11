@@ -13,6 +13,10 @@ const PlatosScreen = () => {
         navigation.navigate('DetallePlato', { plato });
     };
 
+    const goBackToWelcome = () => {
+        navigation.navigate('Bienvenida'); // Reemplaza 'Welcome' con el nombre de tu vista de bienvenida
+    };
+
     useEffect(() => {
         const fetchPlatos = async () => {
             try {
@@ -96,6 +100,10 @@ const PlatosScreen = () => {
                 renderItem={renderPlatoItem}
                 contentContainerStyle={styles.flatListContainer}
             />
+                <TouchableOpacity onPress={goBackToWelcome} style={styles.goBackButton}>
+                <Text style={styles.goBackButtonText}>Volver a Bienvenida</Text>
+            </TouchableOpacity>
+
         </ScrollView>
     );
 };
@@ -158,6 +166,18 @@ const styles = StyleSheet.create({
     },
     flatListContainer: {
         flex: 1,
+    },
+    goBackButton: {
+        backgroundColor: '#87AB49',
+        padding: 10,
+        borderRadius: 8,
+        alignItems: 'center',
+        marginTop: 20,
+    },
+    goBackButtonText: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: 'white',
     },
 });
 
