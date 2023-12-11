@@ -16,7 +16,7 @@ const PlatosScreen = () => {
     useEffect(() => {
         const fetchPlatos = async () => {
             try {
-                const response = await axios.get('http://192.168.132.117:3000/api/platos');
+                const response = await axios.get('https://api-dishes-5r7a.onrender.com/api/platos');
                 setPlatos(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -29,37 +29,42 @@ const PlatosScreen = () => {
 
     const renderPlatoItem = ({ item }) => (
         <TouchableOpacity onPress={() => handlePlatoPress(item)}>
-        <View style={styles.box}>
-            <View style={styles.imageContainer}>
-                <Image source={{ uri: item.imagen }} style={styles.image} />
-            </View>
+            <View style={styles.box}>
+                <View style={styles.imageContainer}>
+                    <Image source={{ uri: item.image.url }} style={styles.image} />
+                </View>
 
-            <View style={styles.infoContainer}>
-                <Text style={styles.infoLabel}>Nombre:</Text>
-                <Text style={styles.infoText}>{item.nombre}</Text>
-            </View>
+                <View style={styles.infoContainer}>
+                    <Text style={styles.infoLabel}>Nombre:</Text>
+                    <Text style={styles.infoText}>{item.name}</Text>
+                </View>
 
-            <View style={styles.infoContainer}>
-                <Text style={styles.infoLabel}>Puntuación:</Text>
-                <Text style={styles.infoText}>{item.puntuacion}</Text>
-            </View>
+                <View style={styles.infoContainer}>
+                    <Text style={styles.infoLabel}>Puntuación:</Text>
+                    <Text style={styles.infoText}>{item.rating}</Text>
+                </View>
 
-            <View style={styles.infoContainer}>
-                <Text style={styles.infoLabel}>Precio:</Text>
-                <Text style={styles.infoText}>{item.precio}</Text>
-            </View>
+                <View style={styles.infoContainer}>
+                    <Text style={styles.infoLabel}>Categoria:</Text>
+                    <Text style={styles.infoText}>{item.category}</Text>
+                </View>
 
-        </View>
+                <View style={styles.infoContainer}>
+                    <Text style={styles.infoLabel}>Precio:</Text>
+                    <Text style={styles.infoText}>{item.price}</Text>
+                </View>
+
+            </View>
         </TouchableOpacity>
     );
 
     const filteredPlatos = platos.filter(
         (plato) =>
-            (plato.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            plato.descripcion.toLowerCase().includes(searchTerm.toLowerCase())) &&
-            plato.tipo.toLowerCase() === 'entrada'
+            (plato.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                plato.description.toLowerCase().includes(searchTerm.toLowerCase())) &&
+            plato.type.toLowerCase() === 'entrada'
     );
-    
+
 
     return (
         <ScrollView style={styles.container}>

@@ -45,6 +45,11 @@ const PlatosScreen = () => {
                 </View>
 
                 <View style={styles.infoContainer}>
+                    <Text style={styles.infoLabel}>Categoria:</Text>
+                    <Text style={styles.infoText}>{item.category}</Text>
+                </View>
+
+                <View style={styles.infoContainer}>
                     <Text style={styles.infoLabel}>Tipo:</Text>
                     <Text style={styles.infoText}>{item.type}</Text>
                 </View>
@@ -54,7 +59,7 @@ const PlatosScreen = () => {
                     <Text style={styles.infoText}>{item.price}</Text>
                 </View>
 
-                
+
             </View>
         </TouchableOpacity>
     );
