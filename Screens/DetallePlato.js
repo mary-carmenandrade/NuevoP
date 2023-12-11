@@ -20,6 +20,11 @@ const DetallePlato = () => {
         navigation.navigate('DetallePlato', { plato });
     };
 
+    const goBackToWelcome = () => {
+        navigation.navigate('Platos'); // Reemplaza 'Welcome' con el nombre de tu vista de bienvenida
+    };
+
+
     useEffect(() => {
         const fetchPlatosMismoTipo = async () => {
             try {
@@ -143,6 +148,10 @@ const DetallePlato = () => {
                 />
                 <Button title="Agregar Comentario" onPress={cometar} />
             </View>
+
+            <TouchableOpacity onPress={goBackToWelcome} style={styles.goBackButton}>
+                <Text style={styles.goBackButtonText}>Volver a PLatos</Text>
+            </TouchableOpacity>
         </ScrollView>
     );
 };
@@ -263,6 +272,18 @@ const styles = StyleSheet.create({
         width: 30,
         height: 30,
         resizeMode: 'cover',
+    },
+    goBackButton: {
+        backgroundColor: '#87AB49',
+        padding: 10,
+        borderRadius: 8,
+        alignItems: 'center',
+        marginTop: 20,
+    },
+    goBackButtonText: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: 'white',
     },
 });
 
