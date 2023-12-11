@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, StyleSheet, Image, ScrollView, TextInput, Button } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Image, ScrollView, TextInput, Button, TouchableOpacity } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Ionicons } from '@expo/vector-icons';
 
 const DetallePlato = () => {
     const route = useRoute();
@@ -12,6 +12,7 @@ const DetallePlato = () => {
     const [platosMismoTipo, setPlatosMismoTipo] = useState([]);
     const [nuevoComentario, setNuevoComentario] = useState('');
     const [comentarios, setComentarios] = useState([]);
+    const [selectedRating, setSelectedRating] = useState(0);
 
     const navigation = useNavigation();
 
@@ -22,18 +23,12 @@ const DetallePlato = () => {
     useEffect(() => {
         const fetchPlatosMismoTipo = async () => {
             try {
-                // Filtra los platos por el tipo del plato seleccionado
                 const response = await axios.get(`https://api-dishes-5r7a.onrender.com/api/platos?type=${plato.tipo}`);
-
-                // Filtra los platos por el tipo del plato seleccionado
                 const filteredPlatos = response.data.filter(item => item.type === plato.type);
-                // Elimina el plato actual de la lista filtrada
                 const platosExcluyendoActual = filteredPlatos.filter(item => item.id !== plato.id);
-                // Toma tres platos aleatorios del mismo tipo
                 const randomPlatos = platosExcluyendoActual.sort(() => 0.5 - Math.random()).slice(0, 3);
                 setPlatosMismoTipo(randomPlatos);
-                setComentarios(plato.comments)
-                console.log(plato.comments)
+                setComentarios(plato.comments);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -46,42 +41,90 @@ const DetallePlato = () => {
         try {
             const data = {
                 comment: nuevoComentario
-            }
-            const response = await axios.post(`https://api-dishes-5r7a.onrender.com/api/platos/${plato.id}/comment`, data)
-            setComentarios(response.data.comments)
-            console.log(response.data)
+            };
+            const response = await axios.post(`https://api-dishes-5r7a.onrender.com/api/platos/${plato.id}/comment`, data);
+            setComentarios(response.data.comments);
+            setNuevoComentario(''); // Limpiar el campo después de agregar el comentario
             return response.data;
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
+    };
+
+    const submitRating = async () => {
+        try {
+            if (selectedRating > 0) {
+                const ratingData = {
+                    rating: selectedRating
+                };
+                const response = await axios.post(`https://api-dishes-5r7a.onrender.com/api/platos/${plato.id}/rating`, ratingData);
+                // Actualizar el plato con la nueva calificación
+                setComentarios(response.data.comments);
+                setSelectedRating(0); // Reiniciar la calificación seleccionada
+            } else {
+                // Muestra una alerta o maneja la situación donde no se ha seleccionado una calificación
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     return (
         <ScrollView style={styles.container}>
-            <View style={styles.platoContainer}>
-                {/* Detalles del plato seleccionado */}
-                <Image source={{ uri: plato.image.url }} style={styles.image} />
-                <Text style={styles.infoText}>Nombre: {plato.name}</Text>
-                <Text style={styles.infoText}>Puntuación: {plato.rating}</Text>
-                <Text style={styles.infoText}>Descripción: {plato.description}</Text>
-                <Text style={styles.infoText}>Precio: {plato.price}</Text>
-                <Text style={styles.infoText}>Tipo: {plato.type}</Text>
+            <Image source={{ uri: plato.image.url }} style={styles.image} />
+            <View style={styles.platoDetailsContainer}>
+                <Text style={styles.platoName}>{plato.name}</Text>
+               
+                <View style={styles.ratingContainer}>
+                    <Text style={styles.ratingTitle}>Puntuación:</Text>
+                    <View style={styles.ratingStarsContainer}>
+                        {Array.from({ length: Math.floor(plato.rating) }).map((_, index) => (
+                            <Ionicons key={index} name="star" size={24} color="#FFD700" />
+                        ))}
+                        {Array.from({ length: Math.ceil(5 - plato.rating) }).map((_, index) => (
+                            <Ionicons key={index} name="star-outline" size={24} color="#FFD700" />
+                        ))}
+                    </View>
+                </View>
+
+                <Text style={styles.platoInfo}>Precio: ${plato.price}</Text>
+                <Text style={styles.platoInfo}>Descripción: {plato.description}</Text>
+                <Text style={styles.platoInfo}>Tipo: {plato.type}</Text>
+            </View>
+            <View style={styles.relatedPlatosContainer}>
+                <Text style={styles.relatedText}>Otros platos del mismo tipo:</Text>
+                <FlatList
+                    data={platosMismoTipo}
+                    keyExtractor={(item) => item.id}
+                    horizontal
+                    renderItem={({ item }) => (
+                        <TouchableOpacity onPress={() => handlePlatoPress(item)}>
+                            <View style={styles.relatedPlatoItem}>
+                                <Image source={{ uri: item.image.url }} style={styles.relatedPlatoImage} />
+                                <Text style={styles.relatedPlatoName}>{item.name}</Text>
+                            </View>
+                        </TouchableOpacity>
+                    )}
+                />
+            </View>
+            <View style={styles.ratingContainer}>
+                <Text style={styles.ratingTitle}>Calificar el plato:</Text>
+                <View style={styles.ratingStarsContainer}>
+                    {[1, 2, 3, 4, 5].map((star) => (
+                        <TouchableOpacity
+                            key={star}
+                            style={[styles.star, star <= selectedRating && styles.selectedStar]}
+                            onPress={() => setSelectedRating(star)}
+                        />
+                    ))}
+                </View>
+                <TouchableOpacity style={styles.submitRatingButton} onPress={submitRating}>
+                    <Text style={styles.submitRatingButtonText}>Calificar</Text>
+                </TouchableOpacity>
             </View>
 
-            <Text style={styles.relatedText}>Otros platos del mismo tipo:</Text>
-            <FlatList
-                data={platosMismoTipo}
-                keyExtractor={(item) => item.id}
-                horizontal
-                renderItem={({ item }) => (
-                    <TouchableOpacity onPress={() => handlePlatoPress(item)}>
-                        <View style={styles.relatedPlatoContainer}>
-                            <Image source={{ uri: item.image.url }} style={styles.relatedImage} />
-                            <Text style={styles.relatedInfoText}>{item.name}</Text>
-                        </View>
-                    </TouchableOpacity>
-                )}
-            />
+         
+
             <View style={styles.commentContainer}>
                 <Text style={styles.commentTitle}>Comentarios:</Text>
                 {comentarios.map((comentario, index) => (
@@ -100,7 +143,6 @@ const DetallePlato = () => {
                 />
                 <Button title="Agregar Comentario" onPress={cometar} />
             </View>
-
         </ScrollView>
     );
 };
@@ -108,41 +150,85 @@ const DetallePlato = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 16,
         backgroundColor: '#fff',
-    },
-    platoContainer: {
-        marginBottom: 20,
     },
     image: {
         width: '100%',
         height: 200,
         resizeMode: 'cover',
     },
-    infoText: {
+    platoDetailsContainer: {
+        padding: 16,
+    },
+    platoName: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 8,
+    },
+    platoInfo: {
         fontSize: 16,
-        marginVertical: 8,
+        marginBottom: 4,
+    },
+    ratingContainer: {
+        padding: 16,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ccc',
+    },
+    ratingTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginBottom: 8,
+    },
+    ratingStarsContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginBottom: 16,
+    },
+    star: {
+        width: 30,
+        height: 30,
+        borderRadius: 15,
+        backgroundColor: '#ccc',
+        marginHorizontal: 4,
+    },
+    selectedStar: {
+        backgroundColor: '#FFD700', // Color dorado para estrellas seleccionadas
+    },
+    submitRatingButton: {
+        backgroundColor: '#548C7E',
+        padding: 12,
+        borderRadius: 5,
+        alignItems: 'center',
+    },
+    submitRatingButtonText: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    relatedPlatosContainer: {
+        padding: 16,
     },
     relatedText: {
         fontSize: 18,
         fontWeight: 'bold',
         marginBottom: 10,
     },
-    relatedPlatoContainer: {
+    relatedPlatoItem: {
         marginRight: 10,
     },
-    relatedImage: {
+    relatedPlatoImage: {
         width: 100,
         height: 100,
         resizeMode: 'cover',
         borderRadius: 5,
     },
-    relatedInfoText: {
+    relatedPlatoName: {
         fontSize: 14,
         marginTop: 5,
+        textAlign: 'center',
     },
     commentContainer: {
-        marginTop: 16,
+        padding: 16,
     },
     commentTitle: {
         fontSize: 18,
@@ -154,14 +240,29 @@ const styles = StyleSheet.create({
         marginBottom: 4,
     },
     addCommentContainer: {
-        marginTop: 16,
+        padding: 16,
+        borderTopWidth: 1,
+        borderTopColor: '#ccc',
     },
     commentInput: {
         height: 40,
-        borderColor: 'gray',
+        borderColor: '#548C7E',
         borderWidth: 1,
         marginBottom: 8,
         paddingLeft: 8,
+    },
+    ratingStarsContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginBottom: 16,
+    },
+    starContainer: {
+        marginHorizontal: 4,
+    },
+    starImage: {
+        width: 30,
+        height: 30,
+        resizeMode: 'cover',
     },
 });
 
