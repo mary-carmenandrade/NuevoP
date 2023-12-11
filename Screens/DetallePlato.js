@@ -126,18 +126,23 @@ const DetallePlato = () => {
         </View>
         <View style={styles.ratingContainer}>
           <Text style={styles.ratingTitle}>Calificar el plato:</Text>
+
           <View style={styles.ratingStarsContainer}>
             {[1, 2, 3, 4, 5].map((star) => (
-              <TouchableOpacity
-                key={star}
-                style={[
-                  styles.star,
-                  star <= selectedRating && styles.selectedStar,
-                ]}
-                onPress={() => setSelectedRating(star)}
-              />
+                <TouchableOpacity
+                    key={star}
+                    onPress={() => setSelectedRating(star)}
+                >
+                    <Ionicons
+                        name={star <= selectedRating ? 'star' : 'star-outline'}
+                        size={24}
+                        color="#FFD700"
+                    />
+                </TouchableOpacity>
             ))}
-          </View>
+        </View>
+
+          
           <TouchableOpacity
             style={styles.submitRatingButton}
             onPress={submitRating}
@@ -286,6 +291,16 @@ const styles = StyleSheet.create({
         height: 30,
         resizeMode: 'cover',
     },
+    star: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: '#ccc',
+    marginHorizontal: 4,
+  },
+  selectedStar: {
+    backgroundColor: '#FFD700', // Color dorado para estrellas seleccionadas
+  },
 });
 
 export default DetallePlato;
